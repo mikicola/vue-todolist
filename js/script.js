@@ -12,6 +12,10 @@
 const root = new Vue({
     el: '#root',
     data: {
+        newTodoItem: {
+            text: '',
+            done: false,
+        },
         todoList:[
             {
                 text: 'Fare i compiti',
@@ -41,6 +45,11 @@ const root = new Vue({
 
         DeleteTodoItem(index) {
             this.todoList.splice(index, 1);
+        },
+
+        addItemTodo() {
+            this.todoList.unshift(this.newTodoItem);
+            this.newTodoItem = '';
         },
     }
 });
