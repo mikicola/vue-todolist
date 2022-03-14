@@ -19,15 +19,16 @@
 
         <div class="todo-list">
             <ul class="ul-todo-list">
-                <li class="li-todo-list-item">Fare i compiti
-                    <button class="btn-x">x</button>
+
+                <!-- prende gli elementi (todo) in todoList -->
+                <li v-for="todo in todoList" class="li-todo-list-item">
+                    <div>
+                        {{ todo }}
+                    </div>
+                    <button @clik="deleteTodo(index)" class="btn-x">x</button>
                 </li>
-                <li class="li-todo-list-item">Fare la spesa
-                    <button class="btn-x">x</button>
-                </li>
-                <li class="li-todo-list-item">Fare il bucato
-                    <button class="btn-x">x</button>
-                </li>
+
+               
             </ul>
         </div>
     </div><!-- fine root  -->
