@@ -58,3 +58,7 @@ body{
     font-size: 1.2em;
     font-weight: bold;
 }
+
+.text-line-through {
+    text-decoration: line-through;
+}

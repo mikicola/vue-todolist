@@ -22,10 +22,10 @@
 
                 <!-- prende gli elementi (todo) in todoList -->
                 <li v-for="todo in todoList" class="li-todo-list-item">
-                    <div>
-                        {{ todo }}
+                    <div @click="lineThrough(index)" :class="(todo.done == true) ? 'text-line-through' : '' ">
+                        {{ todo.text }}
                     </div>
-                    <button @clik="deleteTodo(index)" class="btn-x">x</button>
+                    <button @click="DeleteTodoItem(index)" class="btn-x">x</button>
                 </li>
 
                

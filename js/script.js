@@ -13,11 +13,34 @@ const root = new Vue({
     el: '#root',
     data: {
         todoList:[
-            'Fare i compiti',
-            'Fare la spesa',
-            'Fare il bucato',
-            
+            {
+                text: 'Fare i compiti',
+                done: true,
+            },
+            {
+                text: 'Fare la spesa',
+                done: false,
+            },{
+                text: 'Fare il bucato',
+                done: true,
+            },{
+                text: 'Capire vue',
+                done: false,
+            },
+             
         ],
     },
+    methods: {
+        lineThrough(index) {
+            if (this.todoList[index].done) {
+                this.todoList[index].done = false;
+            } else {
+                this.todoList[index].done = true;
+            }
+        },
 
+        DeleteTodoItem(index) {
+            this.todoList.splice(index, 1);
+        },
+    }
 });
